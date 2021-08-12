@@ -1,0 +1,77 @@
+﻿<Window x:Class="MainApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MainApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="800" Loaded="Window_Loaded">
+
+
+    <Grid MouseEnter="Grid_MouseEnter">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="133*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="483*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.ColumnSpan="3" Background="DarkCyan" >
+                <TextBlock FontFamily="Times New Roman" 
+                           FontStyle="Normal" 
+                           FontSize="50" FontWeight="Bold"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center">Welcome</TextBlock>
+            </Grid>
+
+            <Label Grid.Row="1" Grid.Column="1" FontWeight="Black" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center">Salary</Label>
+            <Label Grid.Row="2" Grid.Column="1" FontWeight="Black" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center">Car</Label>
+            <Label Grid.Row="3" Grid.Column="1" FontWeight="Black" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center">Clothing</Label>
+            <Label Grid.Row="4" Grid.Column="1" FontWeight="Black" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center">Food</Label>
+            <Label Grid.Row="5" Grid.Column="1" FontWeight="Black" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center">Leisure</Label>
+            <Label Grid.Row="6" Grid.Column="1" FontWeight="Black" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center">Living</Label>
+
+            <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  x:Name="txtSalary" Grid.Row="1" Grid.Column="2"></TextBox>
+            <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="txtCar" Grid.Row="2" Grid.Column="2"></TextBox>
+            <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="txtClothing" Grid.Row="3" Grid.Column="2"></TextBox>
+            <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="txtFood" Grid.Row="4" Grid.Column="2"></TextBox>
+            <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="txtLeisure" Grid.Row="5" Grid.Column="2" TextChanged="txtLeisure_TextChanged"></TextBox>
+            <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="txtLiving" Grid.Row="6" Grid.Column="2"></TextBox>
+
+            <DataGrid  IsReadOnly="False"  GridLinesVisibility="All" HeadersVisibility="All" x:Name="Data" RowHeight="40" ColumnWidth="100" Grid.Row="7" Grid.ColumnSpan="3" SelectionChanged="Data_SelectionChanged" Loaded="Data_Loaded" SelectionMode="Single">
+                <DataGrid.Columns>
+                    <!--<DataGridTextColumn  FontSize="20"></DataGridTextColumn>
+                    <DataGridTextColumn  FontSize="20"></DataGridTextColumn>
+                    <DataGridTextColumn  FontSize="20"></DataGridTextColumn>
+                    <DataGridTextColumn  FontSize="20"></DataGridTextColumn>
+                    <DataGridTextColumn  FontSize="20"></DataGridTextColumn>
+                    <DataGridTextColumn  FontSize="20"></DataGridTextColumn>
+                    <DataGridTextColumn  FontSize="20"></DataGridTextColumn>-->
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Button x:Name="btnAdd" Style="{StaticResource CustomButtonStyle}" Grid.Row="1" Grid.RowSpan="2" Click="btnAdd_Click">ADD</Button>
+            <Button x:Name="btnUpdate" Style="{StaticResource CustomButtonStyle}" Grid.Row="3" Grid.RowSpan="2" Click="btnUpdate_Click">Update</Button>
+            <Button x:Name="btnDelete" Style="{StaticResource CustomButtonStyle}" Grid.Row="5" Grid.RowSpan="1" Click="btnDelete_Click">Delete</Button>
+            <Button x:Name="btnRefresh" Style="{StaticResource CustomButtonStyle}" Grid.Row="6" Click="btnRefresh_Click" >Refresh Data</Button>
+
+
+        </Grid>
+
+    </Grid>
+</Window>
